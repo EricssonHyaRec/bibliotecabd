@@ -1,0 +1,71 @@
+/* Estilo de las tarjetas (Proveedor, Producto) */
+.titulo_editar {
+    color: orange; 
+    margin: 20px;
+}
+
+.card {
+    width: 90%; /* Aumenta el ancho de la tarjeta al 90% del contenedor */
+    max-width: 1200px; /* Establece un ancho máximo más grande */
+    margin: 20px auto; /* Centra la tarjeta en la página */
+    color: black !important; 
+    background-color: white !important;
+    border-radius: 10px;
+}
+
+.row {
+    display: flex; /* Asegúrate de que las filas se distribuyan correctamente */
+}
+
+.col-md-6 {
+    flex: 1; /* Asegura que las columnas ocupen el mismo espacio */
+    padding: 10px; /* Ajusta el espacio interior si es necesario */
+}
+
+/* Resto de tu CSS... */
+
+
+.card-header {
+    background-color: #ffffff !important;  /* Mantener el fondo blanco en el encabezado */
+    color: rgb(0, 0, 0) !important;            /* Texto negro */
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.card-body {
+    border-radius: 10px;
+}
+
+.card-body .form-control {
+    background-color: #ffffff !important;  /* Fondo blanco para los campos de formulario */
+    color: rgb(0, 0, 0) !important;            /* Texto negro en los campos de entrada */
+    border: 1px solid rgb(222, 222, 222);
+    border-radius: 5px;
+}
+
+h4 {
+    margin: 10px;
+}
+
+.subtexto {
+    font-size: 15px; 
+    color: orange;
+    margin: 10px;
+}
+
+/* Eliminar el borde amarillo al hacer clic en el botón */
+.btn-warning {
+    background-color: orange !important;  /* Fondo gris oscuro para el botón */
+    color: rgb(0, 0, 0) !important;            /* Texto blanco */
+    outline: none !important;           /* Eliminar el borde amarillo */
+    box-shadow: none !important;        /* Eliminar el sombreado del borde */
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.btn-warning:hover {
+    background-color: rgb(244, 199, 116) !important;  /* Al pasar el mouse, cambiar a un gris más claro */
+    color: rgb(253, 253, 253) !important;            /* Mantener el texto blanco */
+}

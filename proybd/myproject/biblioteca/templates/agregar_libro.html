@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Agregar Libro Nuevo{% endblock %}
+{% block page_title %}Agregar Libro Nuevo{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/agregar.css' %}">
+
+<div class="container d-flex flex-column justify-content-center" style="min-height: 80vh; padding-top: 10px; padding-bottom: 10px;">
+
+    <h1 class="text-center mb-4" style="color: #27c74c; font-weight: bold; margin-top: 5px;">
+        Agregar Libro <i class="bi bi-book-plus-fill"></i></h1>
+
+    <div class="card mb-4">
+
+        <div class="card-header ">
+            <h3>Agregar Libro al Catálogo</h3>
+            <p class="subtexto">Datos del libro nuevo a agregar al catálogo</p>
+        </div>
+
+        <div class="card-body">
+            <form id="addBookForm" action="{% url 'agregar_libro' %}" method="POST" onsubmit="showMessage(event)">
+                {% csrf_token %}
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="titulo" class="form-label">Título</label>
+                        <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título del libro" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="autor" class="form-label">Autor</label>
+                        <select class="form-select" id="autor" name="id_autor" required>
+                            <option value="" disabled selected>Selecciona un autor</option>
+                            {% for autor in autores %}
+                                <option value="{{ autor.id_autor }}">{{ autor.nombre_autor }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="editorial" class="form-label">Editorial</label>
+                        <input type="text" class="form-control" id="editorial" name="editorial" placeholder="Editorial del libro" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="anio_publicacion" class="form-label">Año de Publicación</label>
+                        <input type="date" class="form-control" id="anio_publicacion" name="anio_publicacion" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="genero" class="form-label">Género</label>
+                        <select class="form-select" id="genero" name="id_genero" required>
+                            <option value="" disabled selected>Selecciona un género</option>
+                            {% for genero in generos %}
+                                <option value="{{ genero.id_genero }}">{{ genero.nombre_categoria }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="cantidad_disponible" class="form-label">Cantidad Disponible</label>
+                        <input type="number" class="form-control" id="cantidad_disponible" name="cantidad_disponible" placeholder="Cantidad disponible" required>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-success" type="submit" style="font-weight: 700;">Guardar Libro Nuevo</button>
+                </div>
+            </form>        
+        </div>
+    </div>
+</div>
+
+<div id="success-message" class="alert alert-success d-none" role="alert" style="position: fixed; bottom: 20px; left: 20px; z-index: 1000;">
+    LIBRO AGREGADO correctamente.
+</div>
+
+<script>
+    function showMessage(event) {
+        event.preventDefault(); // Previene el envío del formulario para mostrar el mensaje
+        document.getElementById('success-message').classList.remove('d-none'); // Muestra el mensaje
+        setTimeout(() => {
+            document.getElementById('addBookForm').submit(); // Envía el formulario después de mostrar el mensaje
+        }, 2000); // Tiempo para que el usuario vea el mensaje antes de enviar
+    }
+</script>
+
+{% endblock %}

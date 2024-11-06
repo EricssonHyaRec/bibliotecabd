@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Agregar Categoria{% endblock %}
+{% block page_title %}Agregar Categoría{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/agregar.css' %}">
+
+<div class="container d-flex flex-column justify-content-center align-items-center" style="min-height: 80vh;">
+    <h2 class="text-center mb-4" style="color: #28a745; font-weight: bold;">Agregar Categoría <i class="bi bi-node-plus-fill"></i></h2>
+
+    <div class="row justify-content-center w-100">
+        <div class="col-lg-6 col-md-8">
+            <div class="card shadow-lg border-0 rounded-3" style="background-color: #ffffff;">
+                <div class="card-body p-5">
+                    
+                    <div id="success-message" class="alert alert-success d-none" role="alert" style="position: fixed; bottom: 20px; left: 20px; z-index: 1000;">
+                        CATEGORIA agregada correctamente.
+                    </div>
+
+                    <form method="POST" action="{% url 'agregar_categoria' %}" onsubmit="showMessage(event)">
+                        {% csrf_token %}
+                        <div class="mb-4">
+                            <label for="nombre_categoria" class="form-label">Nombre de la Categoría</label>
+                            <input type="text" class="form-control form-control-lg" id="nombre_categoria" name="nombre_categoria" placeholder="Ejemplo: Electrónica" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="rubro" class="form-label">Rubro</label>
+                            <input type="text" class="form-control form-control-lg" id="rubro" name="rubro" placeholder="Ejemplo: Consumo" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="estado" class="form-label">Estado</label>
+                            <select class="form-select form-select-lg" id="estado" name="estado" required>
+                                <option value="activo" selected>Activo</option>
+                                <option value="inactivo">Inactivo</option>
+                            </select>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success px-4" style="font-weight: bold;">Registrar</button>
+                            <a href="{% url 'lista_categorias' %}" class="btn btn-dark px-4" style="border-radius: 8px; font-weight: bold; margin-left: 10px;">Lista Categorías</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showMessage(event) {
+        event.preventDefault(); // Previene el envío del formulario para mostrar el mensaje
+        document.getElementById('success-message').classList.remove('d-none'); // Muestra el mensaje
+        setTimeout(() => {
+            event.target.submit(); // Envía el formulario después de mostrar el mensaje
+        }, 2000); // Tiempo para que el usuario vea el mensaje antes de enviar
+    }
+</script>
+
+{% endblock %}

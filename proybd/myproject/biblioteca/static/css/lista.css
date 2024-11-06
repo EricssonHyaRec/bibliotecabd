@@ -1,0 +1,52 @@
+/* Fondo y fuentes */
+
+.card {
+    border: 1px solid #D0C4B5;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+.card-header {
+    background-color: #FAF3E3;
+    color: #5C4033;
+    font-weight: bold;
+    text-align: center;
+}
+/* Tabla de libros */
+.table thead th {
+    background-color: #FAF3E3;
+    color: #5C4033;
+    border: none;
+}
+.table tbody tr {
+    border-bottom: 1px solid #D0C4B5;
+}
+/* Botones personalizados */
+.btn-crud {
+    background: linear-gradient(45deg, #cc671f, #bd511b, #c28b15, #8c5010);
+    background-size: 300% 300%; /* Aumenta el tamaño del fondo para permitir el movimiento */
+    color: white;
+    border: none; /* Elimina el borde predeterminado */
+    padding: 5px 15px; /* Espaciado interno */
+    font-size: 12px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-position 0.5s ease; /* Transición para el movimiento del gradiente */
+}
+
+.btn-crud:hover {
+    animation: wave 3s infinite; /* Aplica la animación al pasar el ratón */
+}
+@keyframes wave {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.modal-header{
+    background-color: #23a53f;
+    color: white;
+}
