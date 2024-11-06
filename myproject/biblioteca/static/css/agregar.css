@@ -1,0 +1,45 @@
+/* Estilo de las tarjetas (Proveedor, Producto) */
+.titulo_agregar{
+    color: rgb(18, 196, 119); 
+    margin: 20px;
+}
+.card{
+    margin: 0px 70px; 
+    color: black !important;    
+    background-color: white !important;
+    border-radius: 10px;
+    height: auto;
+    width: auto;
+}
+
+.card-header {
+    background-color: #ffffff !important;  /* Mantener el fondo blanco en el encabezado */
+    color: rgb(0, 0, 0) !important;            /* Texto negro */
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 15px;
+
+}
+.card-body{
+    border-radius: 10px;
+
+}
+
+.card-body .form-control {
+    background-color: #ffffff !important;  /* Fondo blanco para los campos de formulario */
+    color: rgb(0, 0, 0) !important;            /* Texto negro en los campos de entrada */
+    border: 1px solid rgb(222, 222, 222);
+    border-radius: 5px;
+}
+h3{
+    margin: 10px;
+}
+.subtexto{
+    font-size: 15px; 
+    color: rgb(20, 201, 123);
+    margin: 10px;
+}
+.btn-warning:hover {
+    background-color: rgb(17, 186, 12) !important;  /* Al pasar el mouse, cambiar a un gris más claro */
+    color: rgb(0, 0, 0) !important;            /* Mantener el texto blanco */
+}

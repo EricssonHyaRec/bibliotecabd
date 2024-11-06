@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Inicio{% endblock %}
+{% block seccion %}Inicio{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/inicio.css' %}">
+
+<!-- Sección de bienvenida -->
+<section class="welcome-section">
+    <div class="container">
+        <h1>Bienvenido a Nuestra Biblioteca</h1>
+        <p>Explora un mundo de conocimiento y descubre tu próxima gran lectura.</p>
+    </div>
+</section>
+
+<!-- Sección de categorías destacadas -->
+<section class="categories-section">
+    <div class="container">
+        <h2 class="text-center mb-4">Categorías Populares</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card category-card">
+                    <img src="{% static 'images/ficcion.jpg' %}" alt="Ficción" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Ficción</h5>
+                        <p class="card-text">Descubre historias increíbles que te transportarán a otros mundos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card category-card">
+                    <img src="{% static 'images/historia.jpg' %}" alt="Historia" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Historia</h5>
+                        <p class="card-text">Viaja al pasado y conoce los eventos que marcaron el mundo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card category-card">
+                    <img src="{% static 'images/Ciencia.jpg' %}" alt="Ciencia" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Ciencia</h5>
+                        <p class="card-text">Amplía tus conocimientos con los últimos avances científicos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
