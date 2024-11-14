@@ -18,13 +18,24 @@
                 <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#addAuthorModal">Agregar Autor</button>
                 <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#addGenreModal">Agregar Género</button>
             </div>
-
-            <!-- Tabla de libros -->
-            <table class="table table-hover">
-                <thead>
+            
+            <!-- Script para DataTable -->
+            <script>
+                $(document).ready(function() {
+                    $('#autores').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: ['csv', 'excel', 'pdf', 'print']
+                    });
+                });
+            </script>
+            <!-- Tabla de autores -->
+            <table id="autores" class="table table-striped table-hover">
+                <thead class="table-light">
                     <tr>
                         <th>ID</th>
                         <th>Nombre - Apellidos</th>
+                        <th>Acciones</th>
+
 
                     </tr>
                 </thead>
@@ -35,7 +46,7 @@
                         <td>{{ autor.nombre_autor }}</td>
         
                         <td>
-                            <button class="btn btn-crud btn-sm me-1">Leer</button>
+                            <button class="btn btn-crud btn-sm me-1">Detalles</button>
                             <button class="btn btn-warning btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editBookModal" 
                             onclick="cargarDatos('{{ autor.id_autor }}', '{{ autor.nombre_autor }}')">Editar</button>
                             <form method="POST" action="{% url 'eliminar_autor' autor.id_autor %}" style="display:inline;">
