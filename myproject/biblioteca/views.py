@@ -10,7 +10,6 @@ from django.db import connection
 from django.conf import settings
 
 
-
 def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']

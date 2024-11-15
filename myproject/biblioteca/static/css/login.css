@@ -14,15 +14,16 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/static/images/untitled.png');
+    background-color: whitesmoke;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.5; /* Ajusta la opacidad (0.0 a 1.0) */
+    opacity: 0.6; /* Ajusta la opacidad (0.0 a 1.0) */
     z-index: -1; /* Asegúrate de que el fondo esté detrás del contenido */
 }
 .mb-4{
     color: #bd511b;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .card {
@@ -39,17 +40,6 @@ body::before {
     font-weight: bold;
     font-size: 1.2rem;
     text-align: center;
-}
-
-.form-control {
-    background-color: #FDFBF6;
-    border-color: #D0C4B5;
-}
-
-
-
-.form-text {
-    color: #8F7264;
 }
 
 .card-footer a {
@@ -240,4 +230,70 @@ strong {
       transform: scale(0.75);
       box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
+}
+
+
+/*------------------------------*/
+.container {
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  width: 800px;
+  max-width: 90%;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px 20px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  background-color: #fdfff5;
+}
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #777777;
+  margin-bottom: 20px;
+}
+.options a{
+  text-decoration: none;
+  color: #af9b4c;
+}
+.options a:hover{
+  text-decoration: underline;
+}
+
+
+.options input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.signup {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signup a {
+  color: #af9b4c;
+  text-decoration: none;
+}
+
+.signup a:hover {
+  text-decoration: underline;
+}
+
+.login-image {
+  width: 40%;
+  background-image: url('/static/images/Untitled.png'); /* Reemplaza con tu URL de imagen */
+  background-size: cover;
+  background-position: center;
+  margin: 15px;
+  margin-right: 0px;
+  border-radius: 5px;
 }

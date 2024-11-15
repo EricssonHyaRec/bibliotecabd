@@ -14,12 +14,9 @@
 </head>
 <body class="d-flex flex-column align-items-center justify-content-center vh-100">
 
-    <h1 class="mb-4">Biblioteca <i class="bi bi-book-half"></i></h1>
+    <h1 class="mb-4">  BIBLIOTECA VIRTUAL <i class="bi bi-book-half"></i></h1>
 
-    <div class="card" style="width: 100%; max-width: 400px;">
-        <div class="card-header">
-            Acceso a la Biblioteca
-        </div>
+    <div class="container">
         <div class="card-body">
             <!-- Pestañas para alternar entre Iniciar sesión y Registrarse -->
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -41,18 +38,20 @@
                     <form action="{% url 'login' %}" method="post">
                         {% csrf_token %}
                         <div class="mb-3">
-                            <label for="username" class="form-label">Usuario:</label>
+                            <label for="username" class="form-label">Usuario</label>
                             <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-person"></i></span>
-                                <input type="text" class="form-control" placeholder="Usuario" name="username" required>
+                                <input type="text" class="form-control" placeholder="Nombre usuario" name="username" required>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">Contraseña:</label>
+                            <label for="password" class="form-label">Contraseña</label>
                             <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                                <input type="password" class="form-control" placeholder="Contraseña" name="password" required>
+                                <input type="password" class="form-control" placeholder="Password" name="password" required>
                             </div>
+                        </div>
+                        <div class="options">
+                            <label><input type="checkbox">Recuerdame</label>
+                            <a href="#">¿Olvide mi contraseña?</a>
                         </div>
                         <div class="h-captcha" data-sitekey="10000000-ffff-ffff-ffff-000000000001"></div>
                         <button type="submit" class="btn">
@@ -67,6 +66,9 @@
                             </div>
                           </button>
                     </form>
+                    <div class="signup">
+                        <p>¿No tienes cuenta? <a href="#">Registrate</a></p>
+                    </div>
                 </div>
                 
                 <!-- Formulario de Registro -->
@@ -74,24 +76,21 @@
                     <form action="{% url 'register' %}" method="post">
                         {% csrf_token %}
                         <div class="mb-3">
-                            <label for="new_username" class="form-label">Usuario:</label>
+                            <label for="new_username" class="form-label">Usuario</label>
                             <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-person"></i></span>
-                                <input type="text" class="form-control" placeholder="Usuario" name="new_username" required>
+                                <input type="text" class="form-control" placeholder="Nombre usuario" name="new_username" required>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="new_email" class="form-label">Correo Electrónico:</label>
+                            <label for="new_email" class="form-label">Correo Electrónico</label>
                             <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                                <input type="email" class="form-control" placeholder="Correo Electrónico" name="new_email" required>
+                                <input type="email" class="form-control" placeholder="Direccion de correo electrónico *" name="new_email" required>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="new_password" class="form-label">Contraseña:</label>
+                            <label for="new_password" class="form-label">Contraseña</label>
                             <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                                <input type="password" class="form-control" placeholder="Contraseña" name="new_password" required>
+                                <input type="password" class="form-control" placeholder="Password" name="new_password" required>
                             </div>
                         </div>
                         <button type="submit" class="btn">
@@ -106,12 +105,14 @@
                             </div>
                           </button>
                     </form>
+                    <div class="signup">
+                        <p>¿Ya tienes una cuenta? <a href="#">Iniciar sesion</a></p>
+                    </div>
                 </div>
             </div>
+            <p></p>
         </div>
-        <div class="card-footer text-center">
-            <a href="#" class="form-text">¿Olvidaste tu contraseña?</a>
-        </div>
+        <div class="login-image"></div>
     </div>
 
     <!-- Mostrar mensajes de error -->
